@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary Date Input</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"> <!-- SweetAlert CSS -->
+    <style>
+        body {
+            background-image: url('bg2.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Full viewport height */
+            color: white; /* Text color */
+            font-family: Arial, sans-serif; /* Font style */
+        }
+
+        .container {
+            text-align: center; /* Center the text */
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            border-radius: 15px; /* Rounded corners */
+            padding: 30px; /* Padding around the content */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+            max-width: 400px; /* Max width for the container */
+            width: 90%; /* Responsive width */
+            margin: 20px auto; /* Center horizontally with margin */
+        }
+
+        h2 {
+            font-size: 28px; /* Font size */
+            font-family: 'Tw Cen MT', Arial, sans-serif; /* Font style */
+            color: #FFB6C1; /* Light pink color */
+            text-shadow: 1px 1px 2px red; /* Text shadow effect */
+            padding: 20px; /* Padding around the text */
+            border-radius: 10px; /* Rounded corners */
+            text-align: center; /* Center the text */
+            margin-bottom: 20px; /* Space below the heading */
+            transition: transform 0.3s; /* Smooth transition effect */
+        }
+
+        h2:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        input[type="date"] {
+            padding: 10px; /* Padding inside the input */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            width: 100%; /* Full width */
+            font-size: 16px; /* Font size */
+            margin-top: 10px; /* Space above the input */
+        }
+
+        input[type="date"]:focus {
+            outline: none; /* Remove outline on focus */
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* White glow effect */
+        }
+
+        /* Submit button styles */
+        button {
+            background-color: #FFB6C1; /* Light pink background */
+            color: white; /* White text */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px 20px; /* Padding inside the button */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            margin-top: 15px; /* Space above the button */
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transition effects */
+        }
+
+        button:hover {
+            background-color: #FF69B4; /* Darker pink on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        button:focus {
+            outline: none; /* Remove outline on focus */
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* White glow effect */
+        }
+    </style>
+</head>
+<body>
+    <h2>What's our Anniversary Date, Thel Thel?</h2>
+    <div class="container">
+        <input type="date" id="anniversaryDate" required>
+        <button onclick="checkDate()">Submit</button> <!-- Button to submit the date -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert JS -->
+    <script>
+        function checkDate() {
+            const selectedDate = document.getElementById('anniversaryDate').value;
+
+            // Format the selected date to compare (YYYY-MM-DD)
+            const anniversaryDate = new Date("2024-07-26").toISOString().split('T')[0];
+
+            if (selectedDate === anniversaryDate) {
+                window.location.href = 'datewithme.html'; // Redirect to the new page
+            } else {
+                // Show SweetAlert if the date does not match
+                Swal.fire({
+                    title: 'Oh Thel Thel!',
+                    text: "You forgot our Anni day?",
+                    icon: 'warning',
+                    confirmButtonText: 'Try Again'
+                });
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eat with Me</title>
+    <style>
+        body {
+            background-image: url('bg2.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; /* Ensures the image covers the entire screen */
+            background-attachment: fixed; /* Keeps the image fixed while scrolling */
+            display: flex; /* Use flexbox for centering */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            height: 100vh; /* Full viewport height */
+            color: #fff; /* Text color */
+            font-family: Arial, sans-serif; /* Font style */
+            text-align: center; /* Center text */
+            flex-direction: column; /* Arrange items in a column */
+        }
+
+        .text-prompt {
+            font-size: 24px; /* Font size for the prompt */
+            margin-bottom: 20px; /* Space below the prompt */
+            color: #510d2f; /* Soft pink color for the text */
+            font-size: 30px;
+        }
+
+        .pics {
+            display: flex; /* Use flexbox for the image container */
+            flex-wrap: wrap; /* Allow wrapping of images to the next line */
+            justify-content: center; /* Center images horizontally */
+            gap: 15px; /* Space between images */
+            margin-bottom: 20px; /* Space below the image container */
+        }
+
+        .image-container {
+            position: relative; /* Position for border effect */
+            cursor: pointer; /* Pointer cursor for the container */
+        }
+
+        .image {
+            width: 250px; /* Set width of images */
+            height: 200px; /* Set height of images */
+            border-radius: 10px; /* Rounded corners for images */
+            object-fit: cover; /* Maintain aspect ratio and cover the space */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+            transition: transform 0.3s; /* Smooth scaling effect */
+        }
+
+        /* Image hover effect */
+        .image:hover {
+            transform: scale(1.05); /* Scale up the image slightly on hover */
+        }
+
+        /* Optional: Add styles for captions */
+        .caption {
+            margin-top: 10px; /* Space above the caption */
+            font-size: 18px; /* Font size for captions */
+            color: #fff; /* Text color for captions */
+        }
+
+        /* Selected image border */
+        .selected {
+            border-bottom: 4px solid #ff69b4; /* Pink border for selected image */
+            border-radius: 10px; /* Match border radius of the image */
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.5); /* Shadow for selected image */
+        }
+
+        /* Submit button styles */
+        button {
+            padding: 10px 20px; /* Padding inside the button */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            background-color: #ff69b4; /* Hot pink background */
+            color: white; /* White text color */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth background color transition */
+            margin-top: 20px; /* Space above the button */
+        }
+
+        button:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="text-prompt">
+        What would you like to eat when you meet me?
+    </div>
+    <div class="pics">
+        <div class="image-container" onclick="selectImage(this)">
+            <img src="photo_2_2024-10-06_03-14-08.jpg" class="image" alt="Ice Cream">
+            <div class="caption">Ice Cream</div>
+        </div>
+        <div class="image-container" onclick="selectImage(this)">
+            <img src="photo_3_2024-10-06_03-14-08.jpg" class="image" alt="Hot Pot">
+            <div class="caption">Hot Pot</div>
+        </div>
+        <div class="image-container" onclick="selectImage(this)">
+            <img src="photo_4_2024-10-06_03-14-08.jpg" class="image" alt="Street Food">
+            <div class="caption">Street Food</div>
+        </div>
+        <div class="image-container" onclick="selectImage(this)">
+            <img src="photo_5_2024-10-06_03-14-08.jpg" class="image" alt="Burger">
+            <div class="caption">Burger</div>
+        </div>
+        <div class="image-container" onclick="selectImage(this)">
+            <img src="photo_1_2024-10-06_03-14-08.jpg" class="image" alt="Me">
+            <div class="caption">Me</div>
+        </div>
+    </div>
+    <button onclick="submitSelection()">Submit</button> <!-- Submit button -->
+
+    <script>
+        let selectedImage = null; // Variable to store the selected image
+
+        function selectImage(element) {
+            // Remove selection from the previously selected image if there is one
+            if (selectedImage) {
+                selectedImage.classList.remove('selected');
+            }
+            // Set the new selected image
+            selectedImage = element;
+            selectedImage.classList.add('selected'); // Add the selected class to the new image
+        }
+
+        function submitSelection() {
+            if (selectedImage) {
+                // Redirect to excite.html if an image is selected
+                window.location.href = 'excite.html';
+            } else {
+                // Alert if no image is selected
+                alert('Please select one food item before submitting.');
+            }
+        }
+    </script>
+</body>
+</html>

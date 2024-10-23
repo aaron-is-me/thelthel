@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All About Thel Thel</title>
+    <style>
+        body {
+            background-image: url('bg2.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; /* Ensures the image covers the entire screen */
+            background-attachment: fixed; /* Keeps the image fixed while scrolling */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        .main {
+         
+    display: flex; /* Enable flexbox layout */
+    justify-content: space-around; /* Center the items horizontally */
+    margin-top: 6%; /* Add space from the top */
+    gap: 20px; /* Add a gap between the boxes */
+}
+
+            
+        
+
+ .box {
+    width: 32%;
+    height: 300px;
+    background-color: rgba(113, 114, 114, 0.289); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Adds the blur effect */
+    border-radius: 20px; /* Rounded corners */
+    padding: 20px; /* Spacing inside the box */
+    color: white; /* Text color for contrast */
+    text-align: center; /* Center-align the text */
+    font-family: 'Bell Gothic Std Black';
+    font-weight: lighter;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.523); /* Shadow effect */
+    margin: 0 10px; /* Add horizontal spacing between boxes */
+    text-shadow: 1px 1px 7px rgb(157, 2, 105); /* Text shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    text-decoration: none;
+}
+
+.box:hover {
+    background-color: rgba(157, 2, 105, 0.8); /* Change to your desired hover color */
+    transform: scale(1.05); /* Scale the box slightly on hover */
+}
+
+        .img1 {
+            width: 250px; /* Image size */
+        }
+
+        .button {
+    left: 87%;
+margin-top: 45px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-block: 0.5rem;
+  padding-inline: 1.25rem;
+  background-color: rgb(0 107 179);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffff;
+  gap: 10px;
+  font-weight: bold;
+  border: 3px solid #ffffff4d;
+  outline: none;
+  overflow: hidden;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  border-color: #fff9;
+}
+
+.button:hover .icon {
+  transform: translate(4px);
+}
+
+.button:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="main">
+            <a href="cute.html" class="box overload"> <!-- Add the href attribute here -->
+                <img src="bear.png" class="img1">
+                <h3> cutest overload Thel Thel </h3>
+            </a>
+        
+            <a href="moment.html" class="box moment"> <!-- Another box with link -->
+                <img src="cute-alarm-clock-icon-png.png" class="img1">
+                <h3> Moment </h3>
+            </a>
+        
+            <a href="date.html" class="box date"> <!-- Another box with link -->
+                <img src="images-removebg-preview.png" class="img1">
+                <h3> Date With Me? </h3>
+            </a>
+        </div>
+        
+    </div>
+    <a href="home.html"><button class="button">
+        Home
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              fill-rule="evenodd"
+              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+        </a>
+</body>
+</html>

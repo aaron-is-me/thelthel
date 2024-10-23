@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excite</title>
+    <style>
+        body {
+            background-image: url('bg2.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; /* Ensures the image covers the entire screen */
+            background-attachment: fixed; /* Keeps the image fixed while scrolling */
+            display: flex; /* Use flexbox for centering */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            height: 100vh; /* Full viewport height */
+            color: #fff; /* Text color */
+            font-family: Arial, sans-serif; /* Font style */
+            text-align: center; /* Center text */
+            flex-direction: column; /* Arrange items in a column */
+        }
+
+        h1 {
+            font-size: 36px; /* Font size for the heading */
+            margin: 20px 0; /* Space above and below the heading */
+            color: #ff69b4; /* Color for the heading */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow effect for depth */
+        }
+
+        /* Style for the range input */
+        .range-container {
+            margin: 20px 0; /* Space above and below the range */
+            display: flex; /* Use flexbox to center the range input */
+            flex-direction: column; /* Arrange items in a column */
+            align-items: center; /* Center items horizontally */
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none; /* Remove default styling */
+            width: 300px; /* Set width of the range slider */
+            height: 8px; /* Set height of the slider track */
+            border-radius: 5px; /* Rounded corners */
+            background: linear-gradient(90deg, #ff69b4 0%, #ff1493 50%, #ff69b4 100%); /* Gradient background */
+            outline: none; /* Remove outline */
+            margin: 10px 0; /* Space around the range */
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Remove default styling */
+            width: 20px; /* Set width of the slider thumb */
+            height: 20px; /* Set height of the slider thumb */
+            border-radius: 50%; /* Make the thumb circular */
+            background: #fff; /* Color for the thumb */
+            cursor: pointer; /* Pointer cursor on hover */
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px; /* Set width of the slider thumb */
+            height: 20px; /* Set height of the slider thumb */
+            border-radius: 50%; /* Make the thumb circular */
+            background: #fff; /* Color for the thumb */
+            cursor: pointer; /* Pointer cursor on hover */
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+        }
+
+        /* Style for the continue button */
+        button {
+            padding: 10px 20px; /* Padding inside the button */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            background-color: #ff69b4; /* Hot pink background */
+            color: white; /* White text color */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth background color transition */
+            margin-top: 20px; /* Space above the button */
+        }
+
+        button:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video id="exciteVideo" class="video-player" autoplay loop muted>
+            <source src="IMG_8091.MP4" type="video/mp4"> <!-- Video source -->
+            Your browser does not support the video tag.
+        </video>
+        <h1>Rate how excited are you</h1>
+        <div class="range-container">
+            <input type="range" id="excitementLevel" min="1" max="10" value="5">
+        </div>
+        <a href="final.html"><button > Continue </button></button> </a> <!-- Continue button -->
+    </div>
+
+    <script>
+        const video = document.getElementById('exciteVideo');
+
+        // Function to handle video settings
+        video.addEventListener('ended', function() {
+            this.currentTime = 0; // Reset video to the beginning
+            this.play(); // Play the video again
+        });
+
+        // Function to handle the continue button click
+        function continueToNextPage() {
+            // Your logic for continuing to the next page goes here
+            alert("Continuing to the next page..."); // Example alert
+        }
+
+        // Auto play video when the page loads
+        window.addEventListener('load', function() {
+            video.play();
+        });
+    </script>
+</body>
+</html>
